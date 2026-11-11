@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap');
+
+/* ==========================================================================
+   DAW SERVER SYSTEM TELEMETRY - ULTRA SUPREME CORE THEME
+   ========================================================================== */
+
+:root {
+  --bg-deep: #07090e;
+  --card-bg: rgba(13, 17, 27, 0.78);
+  --border-glow: rgba(255, 255, 255, 0.08);
+  --accent-cyan: #38bdf8;
+  --accent-purple: #a855f7;
+  --accent-indigo: #6366f1;
+  --accent-emerald: #10b981;
+  --accent-amber: #f59e0b;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Lienzo de fondo con gradientes radiales y rejilla cyber */
+html {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: var(--bg-deep);
+  background-image:
+    radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 55%),
+    radial-gradient(at 100% 100%, rgba(168, 85, 247, 0.12) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(14, 165, 233, 0.08) 0px, transparent 65%),
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 32px 32px, 32px 32px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  color: var(--text-main);
+  padding: 2rem 1.25rem;
+}
+
+/* El body actúa como la tarjeta terminal flotante */
+body {
+  position: relative;
+  width: 100%;
+  max-width: 680px;
+  padding: 2.2rem 2.2rem 1.8rem;
+  background: var(--card-bg);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid var(--border-glow);
+  border-radius: 24px;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.04),
+    0 25px 65px -15px rgba(0, 0, 0, 0.85),
+    0 0 60px -10px rgba(99, 102, 241, 0.18);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  animation: cardAppear 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Barra superior de terminal estilo Mac OS con luces CSS puras */
+body::before {
+  content: "DAW-CORE // MONITOR DE TELEMETRÍA EN VIVO";
+  display: flex;
+  align-items: center;
+  grid-column: 1 / -1;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #64748b;
+  letter-spacing: 0.15em;
+  padding-left: 68px;
+  padding-bottom: 1.2rem;
+  margin-bottom: 0.4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background:
+    radial-gradient(circle at 12px 35%, #ff5f56 5px, transparent 6px),
+    radial-gradient(circle at 28px 35%, #ffbd2e 5px, transparent 6px),
+    radial-gradient(circle at 44px 35%, #27c93f 5px, transparent 6px);
+  background-repeat: no-repeat;
+}
+
+/* Pie de estado interactivo del sistema */
+body::after {
+  content: "● SISTEMA EN LÍNEA  •  BUFFER SEGURO  •  RUNTIME AUTÓNOMO";
+  grid-column: 1 / -1;
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  color: var(--accent-emerald);
+  padding-top: 1.4rem;
+  margin-top: 0.6rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  text-shadow: 0 0 12px rgba(16, 185, 129, 0.45);
+  animation: radarPulse 2.5s infinite ease-in-out;
+}
+
+/* Título principal con gradiente metálico y LED de estado pulsante */
+h1 {
+  grid-column: 1 / -1;
+  font-size: 2.1rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  background: linear-gradient(135deg, #ffffff 30%, #a5b4fc 70%, #c084fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.2rem;
+}
+
+h1::before {
+  content: "";
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  background: var(--accent-emerald);
+  border-radius: 50%;
+  box-shadow: 0 0 14px var(--accent-emerald), 0 0 28px var(--accent-emerald);
+  animation: ledBlink 1.8s infinite ease-in-out;
+  flex-shrink: 0;
+}
+
+/* Primer párrafo: Insignia de Autor y Práctica */
+p:nth-of-type(1) {
+  grid-column: 1 / -1;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.75rem 1.1rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+
+p:nth-of-type(1)::before {
+  content: "DEVELOPER //";
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--accent-cyan);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+/* Tarjetas de telemetría del servidor (Fecha, PHP, Servidor, IP, Protocolo) */
+p:nth-of-type(n+2) {
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  padding: 1rem 1.2rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.86rem;
+  color: #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.4rem;
+  box-shadow: 0 6px 16px -4px rgba(0, 0, 0, 0.45);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Microinteracciones de hover */
+p:nth-of-type(n+2):hover {
+  transform: translateY(-3px);
+  background: rgba(30, 41, 59, 0.75);
+  box-shadow: 0 12px 24px -4px rgba(0, 0, 0, 0.6);
+}
+
+/* Sub-etiquetas dinámicas y acentos de color personalizados por métrica */
+
+/* 1. Fecha: Ocupa las 2 columnas como barra de tiempo principal */
+p:nth-of-type(2) {
+  grid-column: 1 / -1;
+  border-left: 4px solid var(--accent-cyan);
+}
+p:nth-of-type(2)::before {
+  content: "TIMESTAMP / RELOJ DE SISTEMA";
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: var(--accent-cyan);
+}
+p:nth-of-type(2):hover {
+  border-color: rgba(56, 189, 248, 0.6);
+  box-shadow: 0 8px 24px -4px rgba(56, 189, 248, 0.2);
+}
+
+/* 2. Motor PHP */
+p:nth-of-type(3) {
+  border-left: 4px solid var(--accent-purple);
+}
+p:nth-of-type(3)::before {
+  content: "PHP RUNTIME ENGINE";
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: var(--accent-purple);
+}
+p:nth-of-type(3):hover {
+  border-color: rgba(168, 85, 247, 0.6);
+  box-shadow: 0 8px 24px -4px rgba(168, 85, 247, 0.2);
+}
+
+/* 3. Nombre de Host */
+p:nth-of-type(4) {
+  border-left: 4px solid var(--accent-indigo);
+}
+p:nth-of-type(4)::before {
+  content: "HOST DOMAIN";
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: var(--accent-indigo);
+}
+p:nth-of-type(4):hover {
+  border-color: rgba(99, 102, 241, 0.6);
+  box-shadow: 0 8px 24px -4px rgba(99, 102, 241, 0.2);
+}
+
+/* 4. IP Remota del Cliente */
+p:nth-of-type(5) {
+  border-left: 4px solid var(--accent-emerald);
+}
+p:nth-of-type(5)::before {
+  content: "CLIENT REMOTE ADDR";
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: var(--accent-emerald);
+}
+p:nth-of-type(5):hover {
+  border-color: rgba(16, 185, 129, 0.6);
+  box-shadow: 0 8px 24px -4px rgba(16, 185, 129, 0.2);
+}
+
+/* 5. Protocolo de Conexión */
+p:nth-of-type(6) {
+  border-left: 4px solid var(--accent-amber);
+}
+p:nth-of-type(6)::before {
+  content: "SECURITY PROTOCOL";
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: var(--accent-amber);
+}
+p:nth-of-type(6):hover {
+  border-color: rgba(245, 158, 11, 0.6);
+  box-shadow: 0 8px 24px -4px rgba(245, 158, 11, 0.2);
+}
+
+/* ==========================================================================
+   ANIMACIONES DE ALTO RENDIMIENTO (GPU ACCELERATED)
+   ========================================================================== */
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes ledBlink {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(0.85);
+  }
+}
+
+@keyframes radarPulse {
+  0%, 100% {
+    opacity: 0.85;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (MÓVILES / PANTALLAS ESTRECHAS)
+   ========================================================================== */
+
+@media (max-width: 600px) {
+  body {
+    grid-template-columns: 1fr;
+    padding: 1.6rem 1.25rem;
+    border-radius: 18px;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  p:nth-of-type(n+2) {
+    grid-column: 1 / -1;
+  }
+}
